@@ -1044,7 +1044,7 @@ static void free_pages_life(struct zram_pages_life *pl)
 	}
 }
 
-static struct zram_pages_life *init_pages_life()
+static struct zram_pages_life *init_pages_life(void)
 {
 	size_t i = 0;
 	struct zram_pages_life *pl = NULL;
@@ -1431,7 +1431,7 @@ static ssize_t wb_pages_max_show(struct device *dev,
 	ssize_t ret;
 
 	down_read(&zram->init_lock);
-	ret = scnprintf(buf, PAGE_SIZE, "%8lld\n",
+	ret = scnprintf(buf, PAGE_SIZE, "%8ld\n",
 			atomic64_read(&zram->stats.wb_pages_max));
 	up_read(&zram->init_lock);
 
@@ -1466,7 +1466,7 @@ static ssize_t origin_pages_max_show(struct device *dev,
 	ssize_t ret;
 
 	down_read(&zram->init_lock);
-	ret = scnprintf(buf, PAGE_SIZE, "%8lld\n",
+	ret = scnprintf(buf, PAGE_SIZE, "%8ld\n",
 			atomic64_read(&zram->stats.origin_pages_max));
 	up_read(&zram->init_lock);
 
