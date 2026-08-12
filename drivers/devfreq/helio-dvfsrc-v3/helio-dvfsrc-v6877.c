@@ -346,7 +346,7 @@ static u32 dvfsrc_calc_hrt_opp(int data)
 		return DDR_OPP_0;
 
 #else
-	int dvfsrc_rsrv;
+	int dvfsrc_rsrv = 0;
 
 	if ((dvfsrc_rsrv >> V_OPP_TYPE_SHIFT) & 0x3) {
 		if (data < 0x780)
