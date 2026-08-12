@@ -320,6 +320,7 @@ static int ultra_dump_kthread(void *data)
 	int ret = 0;
 	int size = 0, writedata = 0;
 	uint8_t current_idx = 0;
+	mm_segment_t old_fs;
 	struct pcm_dump_t *pcm_dump = NULL;
 	struct dump_package_t *dump_package = NULL;
 	/* RTPM_PRIO_AUDIO_PLAYBACK */
