@@ -10915,6 +10915,7 @@ static int should_we_balance(struct lb_env *env)
  * tasks if there is an imbalance.
  */
 static int load_balance(int this_cpu, struct rq *this_rq,
+int cpu = env.dst_cpu;
 			struct sched_domain *sd, enum cpu_idle_type idle,
 			int *continue_balancing)
 {
@@ -11118,7 +11119,6 @@ more_balance:
 			 * If cpu_util + new task_util is overutil,
 			 * we don't migrate this task.
 			 */
-			int cpu = env.dst_cpu;
 			unsigned long util = cpu_util_without(cpu, busiest->curr) +
 						task_util_est(busiest->curr);
 			if ((capacity_of(env.dst_cpu) * 1024) <
