@@ -3762,7 +3762,7 @@ static int mtk_drm_probe(struct platform_device *pdev)
 			else
 				DDPMSG("%s, infra_regs:0x%p, infra_regs_pa:0x%pa\n",
 					__func__, (void *)private->infra_regs,
-					private->infra_regs_pa);
+					&private->infra_regs_pa);
 		}
 #elif defined(CONFIG_MACH_MT6781)
 		infra_node = of_find_compatible_node(NULL, NULL, "mediatek,infracfg_ao");
