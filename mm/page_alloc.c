@@ -1,4 +1,4 @@
-f/*
+/*
  *  linux/mm/page_alloc.c
  *
  *  Manages the free list, the system allocates free pages here.
@@ -6881,8 +6881,12 @@ void __init mem_init_print_info(const char *str)
 	 */
 #define adj_init_size(start, end, size, pos, adj) \
 	do { \
-		if (start <= (unsigned long)pos && (unsigned long)pos < end && size > adj) \
+		if ((unsigned long)(start) <= (unsigned long)(pos) && \
+		    (unsigned long)(pos) < (unsigned long)(end) && \
+		    (size) > (adj)) \
+			(size) -= (adj); \
 	} while (0)
+
 
 	adj_init_size(__init_begin, __init_end, init_data_size,
 		     _sinittext, init_code_size);
