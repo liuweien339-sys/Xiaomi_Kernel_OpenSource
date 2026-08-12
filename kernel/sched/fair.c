@@ -10915,7 +10915,6 @@ static int should_we_balance(struct lb_env *env)
  * tasks if there is an imbalance.
  */
 static int load_balance(int this_cpu, struct rq *this_rq,
-int cpu = env.dst_cpu;
 			struct sched_domain *sd, enum cpu_idle_type idle,
 			int *continue_balancing)
 {
