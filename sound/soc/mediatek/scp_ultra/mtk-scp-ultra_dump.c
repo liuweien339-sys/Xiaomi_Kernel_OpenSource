@@ -320,7 +320,6 @@ static int ultra_dump_kthread(void *data)
 	int ret = 0;
 	int size = 0, writedata = 0;
 	uint8_t current_idx = 0;
-	mm_segment_t old_fs;
 	struct pcm_dump_t *pcm_dump = NULL;
 	struct dump_package_t *dump_package = NULL;
 	/* RTPM_PRIO_AUDIO_PLAYBACK */
@@ -365,7 +364,7 @@ static int ultra_dump_kthread(void *data)
 				pcm_dump = (struct pcm_dump_t *)
 						(ultra_dump_mem.start_virt +
 						dump_package->rw_idx);
-				if (fp_pcm_in == NULL {
+				if (fp_pcm_in == NULL) {
 					pr_info("DUMP_PCM_IN null, break\n");
 					break;
 				}
@@ -395,7 +394,7 @@ static int ultra_dump_kthread(void *data)
 				pcm_dump = (struct pcm_dump_t *)
 						(ultra_dump_mem.start_virt +
 						dump_package->rw_idx);
-				if (fp_pcm_out == NULL {
+				if (fp_pcm_out == NULL) {
 					pr_info("DUMP_PCM_OUT null, break\n");
 					break;
 				}
