@@ -31,7 +31,7 @@ int mtk_scp_ultra_reserved_dram_init(void)
 		scp_get_reserve_mem_size(ULTRA_MEM_ID);
 
 	if (!ultra_resv_mem->phy_addr) {
-		pr_err("%s(), scp ultra_resv_mem phy_addr error\n");
+		pr_err("%s(), scp ultra_resv_mem phy_addr error\n", __func__);
 		return -1;
 	}
 
