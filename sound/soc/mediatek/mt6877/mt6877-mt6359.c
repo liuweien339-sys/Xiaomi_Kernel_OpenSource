@@ -109,7 +109,7 @@ static int analog_usb_typec_event_changed(struct notifier_block *nb,
 	if (!usbc_priv || (usbc_priv != g_usbc_priv))
 		return -EINVAL;
 
-	pr_info("%s:USB change event received, evt %d, expected %d, ole state %d, new state %d\n",
+	pr_info("%s:USB change event received, evt %lu, expected %d, ole state %d, new state %d\n",
 		__func__, evt, TCP_NOTIFY_TYPEC_STATE, noti->typec_state.old_state, noti->typec_state.new_state);
 	switch (evt) {
 	case TCP_NOTIFY_TYPEC_STATE:
