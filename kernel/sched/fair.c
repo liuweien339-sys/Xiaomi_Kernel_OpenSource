@@ -10920,6 +10920,7 @@ int cpu = env.dst_cpu;
 			int *continue_balancing)
 {
 	int ld_moved, cur_ld_moved, active_balance = 0;
+	int cpu = env.dst_cpu;
 	struct sched_domain *sd_parent = sd->parent;
 	struct sched_group *group;
 	struct rq *busiest;
