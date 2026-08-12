@@ -1562,10 +1562,10 @@ retry:
 		if (unlikely(uc_cpu->group[clamp_id][group_id].tasks)) {
 #ifdef CONFIG_SCHED_DEBUG
 			WARN_ONCE(1, "invalid CPU[%d] clamp group [%u:%u] refcount: [%u] free_group_id: [%u] uc_map_new.se_count: [%lu]\n",
-			     cpu, clamp_id, group_id,
-			     uc_cpu->group[clamp_id][group_id].tasks,
+			    cpu, clamp_id, group_id,
+			    (unsigned long)uc_cpu->group[clamp_id][group_id].tasks,
 				free_group_id,
-				uc_map_new.se_count);
+				(unsigned long)uc_map_new.se_count);
 #endif
 			uc_cpu->group[clamp_id][group_id].tasks = 0;
 		}
@@ -4496,7 +4496,6 @@ static noinline void __schedule_bug(struct task_struct *prev)
 {
 	/* Save this before calling printk(), since that will clobber it */
 	unsigned long preempt_disable_ip = get_preempt_disable_ip(current);
-	int i = 0;
 	if (oops_in_progress)
 		return;
 
@@ -7775,7 +7774,6 @@ void __init sched_init(void)
 
 #ifdef CONFIG_SMP
 	/* May be allocated at isolcpus cmdline parse time */
-	if (cpu_isolated_map == NULL)
 		zalloc_cpumask_var(&cpu_isolated_map, GFP_NOWAIT);
 	idle_thread_set_boot_cpu();
 	set_cpu_rq_start_time(smp_processor_id());
