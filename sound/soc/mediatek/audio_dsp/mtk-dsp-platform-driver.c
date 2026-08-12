@@ -1425,7 +1425,7 @@ static int mtk_dsp_start(struct snd_pcm_substream *substream,
 	}
 
 	dsp_mem = &dsp->dsp_mem[id];
-	dev_info(dsp->dev, "%s() task id:%s %s\n",
+	dev_info(dsp->dev, "%s() task id:%d %s\n",
 		 __func__, id,
 		 dsp_mem->adsp_xrun_flag ? "adsp xrun" : "");
 
@@ -1779,7 +1779,7 @@ static int mtk_dsp_probe(struct snd_soc_platform *platform)
 
 	for (id = 0; id < ADSP_CORE_TOTAL; id++) {
 		if (adsp_irq_registration(id, ADSP_IRQ_AUDIO_ID, audio_irq_handler, dsp) < 0)
-			pr_info("%s, ADSP_IRQ_AUDIO not supported\n");
+		    pr_info("%s, ADSP_IRQ_AUDIO not supported\n");
 	}
 
 	adsp_register_notify(&adsp_audio_notifier);
