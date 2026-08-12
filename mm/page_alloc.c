@@ -6881,7 +6881,7 @@ void __init mem_init_print_info(const char *str)
 	 */
 #define adj_init_size(start, end, size, pos, adj) \
 	do { \
-		if (&start <= &pos && &pos < &end && size > adj) \
+		if (start <= (unsigned long)pos && (unsigned long)pos < end && size > adj)
 	} while (0)
 
 	adj_init_size(__init_begin, __init_end, init_data_size,
