@@ -19,6 +19,6 @@
 #else
 #include <dt-bindings/memory/mt6853-larb-port.h>
 #endif
-#include "mtk_iommu_ext.h"
+#include "../../../../../../../iommu/mtk_iommu_ext.h"
 
 #endif
