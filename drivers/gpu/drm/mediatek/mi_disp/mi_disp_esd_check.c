@@ -36,7 +36,7 @@
 #include "../mtk_drm_mmp.h"
 #include "../mtk_drm_fbdev.h"
 #include "../mtk_drm_trace.h"
-#include "../mi_disp_feature.h"
+#include "mi_disp_feature.h"
 #include "../mtk_disp_recovery.h"
 
 #define ESD_CHECK_IRQ_PERIOD 10 /* ms */
