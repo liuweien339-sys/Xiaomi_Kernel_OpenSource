@@ -2534,11 +2534,10 @@ static void mtk_aal_prepare(struct mtk_ddp_comp *comp)
 		atomic_set(&g_aal_data->is_clock_on, 1);
 	if (comp->id == DDP_COMPONENT_AAL1)
 		atomic_set(&g_aal1_data->is_clock_on, 1);
-	AALFLOW_LOG("[aal_data, g_aal_data] addr[%x, %x] val[%d, %d]\n",
-			&aal_data->is_clock_on, &g_aal_data->is_clock_on,
-			atomic_read(&aal_data->is_clock_on),
-			atomic_read(&g_aal_data->is_clock_on));
-
+	AALFLOW_LOG("[aal_data, g_aal_data] addr[%p, %p] val[%d, %d]\n",
+		&aal_data->is_clock_on, &g_aal_data->is_clock_on,
+		atomic_read(&aal_data->is_clock_on),
+		atomic_read(&g_aal_data->is_clock_on));
 
 #if defined(CONFIG_MTK_DRE30_SUPPORT)
 	if (aal_data->dre3_hw.clk) {
