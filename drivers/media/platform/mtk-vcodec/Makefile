@@ -1,5 +1,5 @@
 ccflags-y += -Wno-error=format
-ifeq (y, $(filter y, $(CONFIG_MACH_MT6893))
+ifeq (y, $(filter y, $(CONFIG_MACH_MT6893)))
 MTK_PLATFORM := mt6885
 endif
 ifeq (y, $(filter y, $(CONFIG_MACH_MT6833)))
