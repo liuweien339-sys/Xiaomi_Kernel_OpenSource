@@ -12,8 +12,8 @@
 #include "mi_dsi_panel.h"
 #include "mi_dsi_display.h"
 #include "mi_disp_print.h"
-#include "mtk_drm_crtc.h"
-#include "mtk_debug.h"
+#include "../mtk_drm_crtc.h"
+#include "../mtk_debug.h"
 
 int mi_drm_crtc_fod_hbm_fence(struct drm_crtc *crtc)
 {
