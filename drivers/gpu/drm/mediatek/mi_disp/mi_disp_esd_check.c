@@ -28,16 +28,16 @@
 #include <linux/soc/mediatek/mtk-cmdq.h>
 
 #include "../../../../kernel/irq/internals.h"
-#include "mtk_drm_drv.h"
-#include "mtk_drm_ddp_comp.h"
-#include "mtk_drm_crtc.h"
-#include "mtk_drm_helper.h"
-#include "mtk_drm_assert.h"
-#include "mtk_drm_mmp.h"
-#include "mtk_drm_fbdev.h"
-#include "mtk_drm_trace.h"
-#include "mi_disp_feature.h"
-#include "mtk_disp_recovery.h"
+#include "../mtk_drm_drv.h"
+#include "../mtk_drm_ddp_comp.h"
+#include "../mtk_drm_crtc.h"
+#include "../mtk_drm_helper.h"
+#include "../mtk_drm_assert.h"
+#include "../mtk_drm_mmp.h"
+#include "../mtk_drm_fbdev.h"
+#include "../mtk_drm_trace.h"
+#include "../mi_disp_feature.h"
+#include "../mtk_disp_recovery.h"
 
 #define ESD_CHECK_IRQ_PERIOD 10 /* ms */
 
